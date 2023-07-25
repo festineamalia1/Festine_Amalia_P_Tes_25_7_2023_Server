@@ -2,7 +2,7 @@
 
 
 ## Installation
-
+- make new database and import absensi.sql
 - Clone this repository to C:\xampp\htdocs
 - start apache and mySQL in xampp control panel
 
