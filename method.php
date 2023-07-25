@@ -129,7 +129,7 @@ class GroupPiketHadir {
 	public  function get_pikethadir()
 	{
 		global $mysqli;
-		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan ";
+		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 111";
 		
 		$data=array();
 		$result=$mysqli->query($query);
@@ -148,5 +148,77 @@ class GroupPiketHadir {
 	
 }
 
+class GroupCadangan {
+
+	public  function get_cadangan()
+	{
+		global $mysqli;
+		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 222";
+		
+		$data=array();
+		$result=$mysqli->query($query);
+		while($row=mysqli_fetch_object($result))
+		{
+			$data[]=$row;
+		}
+		$response=array(
+							'status' => 1,
+							'message' =>'Get List Successfully.',
+							'data' => $data
+						);
+		header('Content-Type: application/json');
+		echo json_encode($response);
+	}
+	
+}
+
+class GroupLepas {
+
+	public  function get_lepas()
+	{
+		global $mysqli;
+		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 333";
+		
+		$data=array();
+		$result=$mysqli->query($query);
+		while($row=mysqli_fetch_object($result))
+		{
+			$data[]=$row;
+		}
+		$response=array(
+							'status' => 1,
+							'message' =>'Get List Successfully.',
+							'data' => $data
+						);
+		header('Content-Type: application/json');
+		echo json_encode($response);
+	}
+	
+}
+
+
+class GroupIzin {
+
+	public  function get_izin()
+	{
+		global $mysqli;
+		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 444";
+		
+		$data=array();
+		$result=$mysqli->query($query);
+		while($row=mysqli_fetch_object($result))
+		{
+			$data[]=$row;
+		}
+		$response=array(
+							'status' => 1,
+							'message' =>'Get List Successfully.',
+							'data' => $data
+						);
+		header('Content-Type: application/json');
+		echo json_encode($response);
+	}
+	
+}
 
  ?>

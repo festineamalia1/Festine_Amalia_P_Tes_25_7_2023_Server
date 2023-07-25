@@ -15,3 +15,12 @@ RewriteRule ^group/([0-9]+)/?$ group.php?id=$1 [NC,L]
 
 RewriteRule ^grouppikethadir/?$ group_pikethadir.php [NC,L]
 RewriteRule ^grouppikethadir/([0-9]+)/?$ group_pikethadir.php?id=$1 [NC,L]
+
+RewriteRule ^groupcadangan/?$ group_cadangan.php [NC,L]
+RewriteRule ^groupcadangan/([0-9]+)/?$ group_cadangan.php?id=$1 [NC,L]
+
+RewriteRule ^grouplepas/?$ group_lepas.php [NC,L]
+RewriteRule ^grouplepas/([0-9]+)/?$ group_lepas.php?id=$1 [NC,L]
+
+RewriteRule ^groupizin/?$ group_izin.php [NC,L]
+RewriteRule ^groupizin/([0-9]+)/?$ group_izin.php?id=$1 [NC,L]
