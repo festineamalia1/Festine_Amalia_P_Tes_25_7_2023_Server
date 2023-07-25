@@ -69,7 +69,7 @@ class GroupPiket {
 	public  function get_grouppiket()
 	{
 		global $mysqli;
-		$query="SELECT * FROM group_piket";
+		$query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group JOIN jadwal ON tb_group.id_group = jadwal.id_group";
 		$data=array();
 		$result=$mysqli->query($query);
 		while($row=mysqli_fetch_object($result))

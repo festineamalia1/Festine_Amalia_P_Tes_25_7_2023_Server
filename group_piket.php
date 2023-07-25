@@ -23,7 +23,7 @@ switch ($request_method) {
 			}
 			else
 			{
-				$gp->insert_grouppiket();
+				$gp->update_grouppiket();
 			}		
 			break; 
 	
