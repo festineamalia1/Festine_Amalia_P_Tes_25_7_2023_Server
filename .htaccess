@@ -1,0 +1,17 @@
+RewriteEngine On # Turn on the rewriting engine
+RewriteRule ^jadwal/?$ jadwal.php [NC,L]
+RewriteRule ^jadwal/([0-9]+)/?$ jadwal.php?id=$1 [NC,L]
+
+RewriteRule ^pekerja/?$ pekerja.php [NC,L]
+RewriteRule ^pekerja/([0-9]+)/?$ pekerja.php?id=$1 [NC,L]
+
+
+
+RewriteRule ^grouppiket/?$ group_piket.php [NC,L]
+RewriteRule ^grouppiket/([0-9]+)/?$ group_piket.php?id=$1 [NC,L]
+
+RewriteRule ^group/?$ group.php [NC,L]
+RewriteRule ^group/([0-9]+)/?$ group.php?id=$1 [NC,L]
+
+RewriteRule ^grouppikethadir/?$ group_pikethadir.php [NC,L]
+RewriteRule ^grouppikethadir/([0-9]+)/?$ group_pikethadir.php?id=$1 [NC,L]
