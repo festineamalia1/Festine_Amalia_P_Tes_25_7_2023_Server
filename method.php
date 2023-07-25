@@ -129,7 +129,7 @@ class GroupPiketHadir {
 	public  function get_pikethadir()
 	{
 		global $mysqli;
-		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja ON group_piket.id_pekerja = pekera.id_pekerja";
+		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan ";
 		
 		$data=array();
 		$result=$mysqli->query($query);
