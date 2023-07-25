@@ -11,7 +11,7 @@ switch ($request_method) {
 	 		}
 	 		else
 	 		{
-	 			$gph->get_cadangan();
+	 			$gph->get_cadangans();
 	 		}
 	 		break;
 

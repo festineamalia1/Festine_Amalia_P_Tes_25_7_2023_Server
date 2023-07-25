@@ -11,7 +11,7 @@ switch ($request_method) {
 	 		}
 	 		else
 	 		{
-	 			$gph->get_pikethadir();
+	 			$gph->get_pikethadirs();
 	 		}
 	 		break;
 

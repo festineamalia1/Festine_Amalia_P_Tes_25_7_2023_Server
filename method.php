@@ -126,10 +126,30 @@ class GroupPiket {
 
 class GroupPiketHadir {
 
-	public  function get_pikethadir()
+	public function get_pikethadirs()
 	{
 		global $mysqli;
-		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 111";
+		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group JOIN jadwal ON tb_group.id_group = jadwal.id_group WHERE group_piket.id_group = 111";
+		
+		$data=array();
+		$result=$mysqli->query($query);
+		while($row=mysqli_fetch_object($result))
+		{
+			$data[]=$row;
+		}
+		$response=array(
+							'status' => 1,
+							'message' =>'Get List Successfully.',
+							'data' => $data
+						);
+		header('Content-Type: application/json');
+		echo json_encode($response);
+	}
+
+	public function get_pikethadir($id=0)
+	{
+		global $mysqli;
+		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group JOIN jadwal ON tb_group.id_group = jadwal.id_group WHERE group_piket.id_group = 111 AND jadwal.id_jadwal = $id";
 		
 		$data=array();
 		$result=$mysqli->query($query);
@@ -150,10 +170,30 @@ class GroupPiketHadir {
 
 class GroupCadangan {
 
-	public  function get_cadangan()
+	public  function get_cadangans()
 	{
 		global $mysqli;
 		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 222";
+		
+		$data=array();
+		$result=$mysqli->query($query);
+		while($row=mysqli_fetch_object($result))
+		{
+			$data[]=$row;
+		}
+		$response=array(
+							'status' => 1,
+							'message' =>'Get List Successfully.',
+							'data' => $data
+						);
+		header('Content-Type: application/json');
+		echo json_encode($response);
+	}
+
+	public  function get_cadangan($id=0)
+	{
+		global $mysqli;
+		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 222 AND jadwal.id_jadwal = $id";
 		
 		$data=array();
 		$result=$mysqli->query($query);
@@ -173,11 +213,29 @@ class GroupCadangan {
 }
 
 class GroupLepas {
-
-	public  function get_lepas()
+public  function get_lepass()
 	{
 		global $mysqli;
 		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 333";
+		
+		$data=array();
+		$result=$mysqli->query($query);
+		while($row=mysqli_fetch_object($result))
+		{
+			$data[]=$row;
+		}
+		$response=array(
+							'status' => 1,
+							'message' =>'Get List Successfully.',
+							'data' => $data
+						);
+		header('Content-Type: application/json');
+		echo json_encode($response);
+	}
+	public  function get_lepas($id=0)
+	{
+		global $mysqli;
+		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 333 AND jadwal.id_jadwal = $id";
 		
 		$data=array();
 		$result=$mysqli->query($query);
@@ -202,7 +260,7 @@ class GroupIzin {
 	public  function get_izin()
 	{
 		global $mysqli;
-		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 444";
+		 $query="SELECT  * FROM group_piket JOIN pekera ON group_piket.id_pekerja = pekera.id_pekerja  JOIN jabatan ON group_piket.id_jabatan = jabatan.id_jabatan JOIN tb_group ON group_piket.id_group = tb_group.id_group WHERE group_piket.id_group = 444 ";
 		
 		$data=array();
 		$result=$mysqli->query($query);

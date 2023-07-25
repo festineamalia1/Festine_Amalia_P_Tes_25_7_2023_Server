@@ -11,7 +11,7 @@ switch ($request_method) {
 	 		}
 	 		else
 	 		{
-	 			$gph->get_lepas();
+	 			$gph->get_lepass();
 	 		}
 	 		break;
 
